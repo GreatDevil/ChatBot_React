@@ -1,0 +1,358 @@
+body {
+  background: #FCFCFC;
+}
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    display: inherit;
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    display: none;
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.docked-widget {
+  border-radius: 10px;
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  width: 350px;
+  z-index: 9999;
+}
+
+.dock {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 180px;
+  border: 1px solid grey;
+  background: white;
+}
+table {
+  width: 100%;
+  border-spacing: 5px;
+}
+
+td {
+  text-align: center;
+  border: 1px solid #619CCC;
+  border-radius: 10px;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 10%;
+  line-height: 21px;
+  padding: 14px;
+
+  /* identical to box height, or 131% */
+  text-align: center;
+  letter-spacing: 0.282353px;
+
+  color: #619CCC;
+}
+td:active {
+  background: #79C6E9;
+}
+
+.hello {
+
+  position: absolute;
+  left: 6.94%;
+  right: 57.78%;
+  top: 57.47%;
+  bottom: 37.94%;
+
+  /* Приветствие на welcome screen */
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button::-moz-focus-inner
+{
+  border: 0;
+}
+
+.superbutton {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 88.33%;
+  right: 5.56%;
+  top: 32.86%;
+  bottom: 35.71%;
+  background: transparent url('fill.png') no-repeat center top;
+}
+
+.ask {
+  //position: relative;
+  //top: 75%;
+  position: absolute;
+  left: 6.94%;
+  right: 11.67%;
+  top: 82.12%;
+  bottom: 29.71%;
+
+  /* текст сообщения юзера */
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+
+  /* or 131% */
+  letter-spacing: 0.282353px;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+  border-style: none;
+  background-color: transparent;
+  outline: none;
+  position: absolute;
+  left: 6.94%;
+  right: 64.17%;
+  top: 35.71%;
+  bottom: 37.14%;
+
+  /* дескриптор или статус */
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* identical to box height */
+
+  color: #1D2629;
+
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.widget {
+  position: relative;
+  width: 360px;
+  height: 680px;
+  &-entering {
+    animation-name: slideInUp;
+  }
+  &-entered {
+    display: inherit;
+    visibility: visible;
+  }
+  &-exiting {
+    animation-name: slideOutDown;
+  }
+  &-exited {
+    display: none;
+    visibility: hidden;
+  }
+
+  &-header {
+    height: 530px;
+    border-radius: 22px 22px 0 0;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 22.06%;
+    background: linear-gradient(124.19deg, #2E408D 0%, #79C6E9 100%);
+    .face {
+      position: absolute;
+      left: 6.94%;
+      right: 70.83%;
+      top: 38.68%;
+      bottom: 47.5%;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 80px;
+      line-height: 94px;
+
+      /* identical to box height */
+
+      color: #FFFFFF;
+    }
+    &-title {
+      position: absolute;
+      left: 6.39%;
+      right: 74.44%;
+      top: 3.38%;
+      bottom: 89.56%;
+
+      /* Имя бота на welcome screen */
+      font-family: SF Pro Display;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 48px;
+
+      /* identical to box height */
+      text-align: center;
+
+      color: #FFFFFF;
+    }
+    &-dialog {
+      background: linear-gradient(124.19deg, #2E408D 0%, #79C6E9 100%);
+      height: 80px;
+      border-radius: 22px 22px 0 0;
+      .face {
+        position: absolute;
+        left: 5.28%;
+        right: 81.67%;
+        top: 1.75%;
+        bottom: 21.25%;
+        width: 48px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 56px;
+
+        color: #FFFFFF;
+      }
+      .onlinePoint {
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        left: 22.5%;
+        right: 75.28%;
+        top: 7%;
+        bottom: 30%;
+        border-radius: 4px;
+
+        background: #95FAC9;
+      }
+      .online {
+        position: absolute;
+        left: 25.56%;
+        right: 59.17%;
+        top: 6%;
+
+        /* дескриптор или статус */
+        font-family: SF Pro Display;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+
+        /* identical to box height */
+
+        color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.4;
+      }
+    }
+    &-title-dialog {
+      position: absolute;
+      left: 22.5%;
+      right: 66.94%;
+      top: 2.75%;
+
+      /* Имя бота */
+      font-family: SF Pro Display;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+
+      color: #FFFFFF;
+    }
+  }
+  &-body {
+    overflow-x:hidden;
+    height: 370px;
+    padding-top: 80px;
+    .msg_bot {
+      width: 218.88px;
+      padding: 14px;
+      background: #D8D9DB;
+      border-radius: 16px;
+      font-family: SF Pro Display;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      margin: 15px;
+
+      /* or 131% */
+      letter-spacing: 0.282353px;
+    }
+    .msg_client {
+      background: #79C6E9;
+      border-radius: 10px;
+      font-family: SF Pro Display;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      width: 176.88px;
+      padding: 14px;
+      margin: 15px;
+
+      /* identical to box height, or 131% */
+      letter-spacing: 0.282353px;
+
+      color: #FFFFFF;
+    }
+  }
+  &-footer {
+    border-top: 0.5px solid #CECECE;
+    width: 360px;
+    height: 70px;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 78%;
+    bottom: -100%;
+
+    background: #FFFFFF;
+
+    &-msg {
+      position: absolute;
+      left: 85%;
+      right: 0%;
+      top: -63px;
+    }
+    &-shift {
+      position: absolute;
+      left: 82.7%;
+      right: 0%;
+      top: 122.7%;
+      bottom: 0%;
+    }
+  }
+}
